@@ -1,0 +1,55 @@
+{
+  "name": "Mycomponent",
+  "version": "0.0.1",
+  "description": "",
+  "author": "zhian.xiang",
+  "type": "module",
+  "module": "dist/index.umd.js",
+  "types": "dist/index.d.ts",
+  "license": "ISC",
+  "bin": {
+    "hello-cli": "build/index.js"
+  },
+  "scripts": {
+    "build": "node build/index.js",
+    "dist": "rollup --config build/rollup.config.js",
+    "build:umd": "rollup --config build/rollup.umd.config.js",
+    "build:esm": "rollup --config build/rollup.ems.config.js",
+    "clean": "rimraf ./dist/*.js"
+  },
+  "dependencies": {
+    "lodash-es": "^4.17.20",
+    "postcss": "^8.2.8",
+    "tailwindcss": "^1.9.0",
+    "typescript": "^4.9.5",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^11.1.1",
+    "@rollup/plugin-strip": "^3.0.2",
+    "@rollup/plugin-typescript": "^11.1.0",
+    "@types/lodash-es": "^4.17.4",
+    "@vitejs/plugin-vue": "^4.1.0",
+    "@vue/compiler-sfc": "^3.2.47",
+    "autoprefixer": "^10.4.14",
+    "child_process": "^1.0.2",
+    "cssnano": "^6.0.0",
+    "inquirer": "^9.2.0",
+    "postcss-import": "^14.0.0",
+    "postcss-modules": "^6.0.0",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-esbuild": "^5.0.0",
+    "rollup-plugin-node-externals": "^5.1.2",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "rollup-plugin-vue": "^6.0.0",
+    "vant": "^4.3.2",
+    "vite": "^4.3.0",
+    "vue-loader": "^17.0.1",
+    "vue-tsc": "^1.2.0"
+  }
+}

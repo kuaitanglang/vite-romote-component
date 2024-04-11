@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vite + Vue + TS</title>
+  <script src="public/lib/vue.global.js"></script>
+  <script src="http://172.16.27.134:8080/button/index.umd.js"></script>
+  <script src="http://172.16.27.134:8080/helloWorld/index.umd.js"></script>
+  <!--<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>-->
+  <script src="public/lib/scriptLoad.ts"></script>
+</head>
+<body>
+
+<div id="app">
+  {{ message }}
+  <div>
+    <button v-for="item in Object.keys(tabs)" @click="active=item">{{item}}</button>
+  </div>
+  <component :is="tabs[active]"></component>
+</div>
+
+<script>
+  const { createApp } = Vue
+  createApp({
+    data() {
+      return {
+        message: 'Hello Vue!',
+        active:"",
+        tabs:{
+          button:window.button,
+          hello: window.helloWorld
+        }
+      }
+    },
+    mounted() {
+      console.log(window.button)
+    }
+  }).mount('#app')
+</script>
+
+</body>
+</html>
